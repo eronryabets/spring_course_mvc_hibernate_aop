@@ -11,6 +11,9 @@ public class Employee {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "name")
+    private String name;
+
     @Column(name = "surname")
     private String surname;
 
@@ -23,7 +26,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String surname, String department, int salary) {
+    public Employee(String name, String surname, String department, int salary) {
+        this.name = name;
         this.surname = surname;
         this.department = department;
         this.salary = salary;
@@ -59,6 +63,14 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
