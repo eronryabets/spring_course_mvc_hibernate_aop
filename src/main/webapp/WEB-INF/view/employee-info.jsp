@@ -7,6 +7,7 @@
 <body>
 
 <h2>Employee info</h2>
+
 <br>
 
 <form:form action="saveEmployee" modelAttribute="employee">

@@ -35,7 +35,7 @@ public class MyController {
 
     }
 
-    @RequestMapping("/saveEmployee")
+    @RequestMapping("/saveEmployee") //MyController класс
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
 
         employeeService.saveEmployee(employee);
