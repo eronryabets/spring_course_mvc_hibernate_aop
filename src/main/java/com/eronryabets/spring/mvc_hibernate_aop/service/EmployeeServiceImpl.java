@@ -20,9 +20,15 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeDAO.getAllEmployees();
     }
 
-    @Override //EmployeeServiceImp класс
+    @Override
     @Transactional
     public void saveEmployee(Employee employee) {
         employeeDAO.saveEmployee(employee);
+    }
+
+    @Override
+    @Transactional
+    public Employee getEmployee(int id) {
+        return employeeDAO.getEmployee(id);
     }
 }
