@@ -61,15 +61,3 @@ public class MyController {
 
 
 }
-
-
-/*
-@RequestMapping("/deleteEmployee")
-    public String deleteEmployee(@RequestParam("empId") int id, Model model){
-        //Employee employee = employeeService.getEmployee(id);
-        //model.addAttribute("employee",employee);
-        employeeService.deleteEmployee(id);
-        System.out.println("MyController________ deleteEmployee");
-        return "redirect:/"; //EmployeeDAOImpl________ getAllEmployees
-    }
- */

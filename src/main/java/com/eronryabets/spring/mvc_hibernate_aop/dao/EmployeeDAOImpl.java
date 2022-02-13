@@ -44,32 +44,23 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 
     @Override
     public void deleteEmployee(int id) {
-        Employee employee = getEmployee(id);
         Session session = sessionFactory.getCurrentSession();
-        session.delete(employee);
+        Query<Employee> query = session.createQuery("delete from Employee " +
+                "where id =:employeeId");
+        query.setParameter("employeeId",id);
+        query.executeUpdate();
+
 
     }
 
 }
 
-
 /*
-   public List<Employee> getAllEmployees() {
-        Session session = sessionFactory.getCurrentSession();
-                List<Employee> allEmployees = session.createQuery(
-                "from Employee", Employee.class).getResultList();
-        return allEmployees;
-    }
-
-    ===============================
-       @Override
-    public void deleteEmployee(int id) {
-        System.out.println("EmployeeDAOImpl++++++++ deleteEmployee");
-        System.out.println("Id удаляемого работнка = " +  id);
+public void deleteEmployee(int id) {
         Employee employee = getEmployee(id);
-        System.out.println("NAME +++++++++ " + employee.getName());
+        System.out.println(employee);
         Session session = sessionFactory.getCurrentSession();
         session.delete(employee);
-        System.out.println("Сотрудник удален");
+
     }
  */
